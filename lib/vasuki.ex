@@ -4,15 +4,15 @@ defmodule Vasuki do
   """
 
   @doc """
-  Hello world.
+  Every ping gets a pong.
 
   ## Examples
 
-      iex> Vasuki.hello()
-      :world
+      iex> Vasuki.ping()
+      :pong
 
   """
-  def hello do
-    :world
+  def ping do
+    :pong
   end
 end

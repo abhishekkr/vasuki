@@ -7,8 +7,8 @@ defmodule Vasuki.Application do
 
   def start(_type, _args) do
     children = [
-      # Starts a worker by calling: Vasuki.Worker.start_link(arg)
-      # {Vasuki.Worker, arg}
+      {Vasuki.Data.Mucket, :noargs},
+      {Vasuki.FileSystem.DirWalk, :noargs}
     ]
 
     # See https://hexdocs.pm/elixir/Supervisor.html
