@@ -40,10 +40,17 @@ defmodule Vasuki.FileSystem.DirWalk do
     {:ok, state}
   end
 
-  def handle_call({:ls, dirpath}, _from, state) do
-    state = Map.update(state, :dirlist, [dirpath], fn exis -> [dirpath|exis] end)
+  defp do_ls(state) do
     {new_file, new_state} = walk(state)
     {:reply, new_file, new_state}
+  end
+  def handle_call({:ls, dirpath}, _from, state) when is_list(dirpath) do
+    Map.update(state, :dirlist, dirpath, fn exis -> dirpath++[exis] end)
+    |> do_ls()
+  end
+  def handle_call({:ls, dirpath}, _from, state) do
+    Map.update(state, :dirlist, [dirpath], fn exis -> [dirpath|exis] end)
+    |> do_ls()
   end
 
   def handle_call(:next, _from, state) do
