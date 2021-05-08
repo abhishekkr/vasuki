@@ -2,12 +2,13 @@
 
 > as per Indian mythology, Vasuki was the serpent who helped churning ocean for obtaining divine Elixir of life
 
+* Docs can be found at [https://hexdocs.pm/vasuki](https://hexdocs.pm/vasuki).
+
 * this is just a simple project to build during getting familiar with Elixir and hopefully gather some helpful constructs as a library
 
 ## Installation
 
-If [available in Hex](https://hex.pm/docs/publish), the package can be installed
-by adding `vasuki` to your list of dependencies in `mix.exs`:
+* available at [hex.pm as vasuki](https://hex.pm/packages/vasuki), add `vasuki` to your list of dependencies in `mix.exs`:
 
 ```elixir
 def deps do
@@ -18,7 +19,6 @@ end
 ```
 
 Documentation can be generated with [ExDoc](https://github.com/elixir-lang/ex_doc)
-and published on [HexDocs](https://hexdocs.pm). Once published, the docs can
-be found at [https://hexdocs.pm/vasuki](https://hexdocs.pm/vasuki).
+and published on [HexDocs](https://hexdocs.pm).
 
 ---

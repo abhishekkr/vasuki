@@ -65,9 +65,12 @@ defmodule Vasuki.FileSystem.DirWalk do
     GenServer.start_link(__MODULE__, :no_args, name: @me)
   end
 
+  @doc "ls adds provided dirpath to list to be traversed and returns top file in queue to returned"
   def ls(dirpath), do: GenServer.call(@me, {:ls, dirpath})
 
+  @doc "next returns one file at a time for directories queued up to traversed recrusively using 'ls'"
   def next, do: GenServer.call(@me, :next)
 
+  @doc "reset simple cleans up the state"
   def reset, do: GenServer.call(@me, :reset)
 end

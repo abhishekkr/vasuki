@@ -58,9 +58,8 @@ defmodule Vasuki.MixProject do
     [
       name: "vasuki",
       # These are the default files included in the package
-      files: ~w(lib priv .formatter.exs mix.exs README* readme* LICENSE*
-                license* CHANGELOG* changelog* src),
-      licenses: ["Apache-2.0"],
+      files: ~w(config lib .formatter.exs mix.exs README.md LICENSE),
+      licenses: ["MIT"],
       links: %{"GitHub" => "https://github.com/abhishekkr/vasuki"}
     ]
   end
