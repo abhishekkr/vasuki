@@ -52,12 +52,13 @@ defmodule Vasuki.FileSystem.DirWalk do
   end
 
   def handle_call(:reset, _from, _state) do
+    update_me(%__MODULE__{})
     {:reply, :done, %__MODULE__{}}
   end
 
-  def terminate(_reason, current_state) do
-    Mucket.update(@me, current_state)
-  end
+  def terminate(_reason, current_state), do: update_me(current_state)
+
+  defp update_me(state), do: Mucket.update(@me, state)
 
   ## External API
   def start_link(_init_state) do
