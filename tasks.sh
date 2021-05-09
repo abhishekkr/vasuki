@@ -25,9 +25,9 @@ case $1 in
     $0 deps
     set -ex
     if [[ $(grep -c ' escript\: ' $(dirname $0)/mix.exs) -ge 1 ]]; then
-      mix escript.build
+      MIX_ENV=prod mix escript.build
     else
-      mix run
+      MIX_ENV=prod mix run
     fi
     set +ex
     ;;
@@ -40,14 +40,14 @@ case $1 in
     $0 deps
     $0 build
     set -ex
-    mix hex.publish package
+    MIX_ENV=prod mix hex.publish package
     set +ex
     ;;
   hexdoc*)
     $0 deps
     $0 docs
     set -ex
-    mix hex.publish docs
+    MIX_ENV=prod mix hex.publish docs
     set +ex
     ;;
   **)

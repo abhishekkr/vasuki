@@ -10,6 +10,12 @@
 
 ---
 
+### v0.1.2 | 2021-May-09
+
+* `Vasuki.FileSystem.DirWalk.ls/1` fix for path list passed to append existing path list
+
+---
+
 ### v0.1.1 | 2021-May-09
 
 * `Vasuki.FileSystem.DirWalk.ls/1` updated to handle a path string or list of paths
